@@ -23,7 +23,15 @@ def test_by_id(browser):
    logo = browser.find_element(By.XPATH, '//div[text() = "Swag Labs"]')  # по тексту
    onesie_img = browser.find_element(By.XPATH, '//img[contains(@alt, "Onesie")]')  # по частичному совпадению атрибута
    t_shirt = browser.find_element(By.XPATH, '//div[contains(text(), "Red")]')  # по частичному совпадению текста
-# Добавить локаторы по осям
+
+# По осям XPath
+   browser.find_element(By.XPATH, '//a[@data-test="item-1-title-link"]/ancestor::div[1]')  # по ancestor
+   browser.find_elements(By.XPATH, '//div[@data-test="inventory-item"]//descendant::img')  # по descendant
+   browser.find_elements(By.XPATH,'//div[@data-test="inventory-item"][1]/following::*')  # по following
+   browser.find_element(By.XPATH,'//div[contains(text(), "Swag Labs")]/parent::header')  # по parent
+   browser.find_elements(By.XPATH,'//div[contains(text(), "Swag Labs")]/preceding::*')  # по preceding
+
+
    backpack_add_to_cart = browser.find_element(By.XPATH, '//button[text()="Add to cart" and @id="add-to-cart-sauce-labs-backpack"]')  # c условием and
 
 
