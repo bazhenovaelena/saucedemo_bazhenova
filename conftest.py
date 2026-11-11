@@ -14,21 +14,14 @@ def browser():
        "profile.password_manager_enabled": False,
    }
 
-
    options.add_experimental_option("prefs", chrome_prefs)
-
-
-   # настройки браузера
    options.add_argument("--incognito")
    options.add_argument("--disable-popup-blocking")
    options.add_argument("--disable-infobars")
    options.add_argument('--start-maximized')
    options.add_argument('--disable-notifications')
 
-
    driver = webdriver.Chrome(options=options)
    driver.implicitly_wait(10)
    yield driver
    driver.close()
-
-

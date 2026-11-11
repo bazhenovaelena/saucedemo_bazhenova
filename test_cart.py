@@ -23,7 +23,3 @@ def test_by_id(browser):
    price = browser.find_element(By.XPATH, '//div[@class="inventory_item_price"]')
    price_text = price.text
    assert price_text== "$9.99"
-
-
-
-

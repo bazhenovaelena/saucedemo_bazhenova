@@ -30,10 +30,7 @@ def test_by_id(browser):
    browser.find_elements(By.XPATH,'//div[@data-test="inventory-item"][1]/following::*')  # по following
    browser.find_element(By.XPATH,'//div[contains(text(), "Swag Labs")]/parent::header')  # по parent
    browser.find_elements(By.XPATH,'//div[contains(text(), "Swag Labs")]/preceding::*')  # по preceding
-
-
    backpack_add_to_cart = browser.find_element(By.XPATH, '//button[text()="Add to cart" and @id="add-to-cart-sauce-labs-backpack"]')  # c условием and
-
 
 # CSS-селекторы
    sorting = browser.find_element(By.CSS_SELECTOR, '.product_sort_container')  # по одному классу
